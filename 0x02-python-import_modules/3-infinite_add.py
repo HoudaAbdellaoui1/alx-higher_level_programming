@@ -12,4 +12,3 @@ if __name__ == "__main__":
                 counter += int(sys.argv[i])
                 i+=1
         print("{}".format(counter))
-
