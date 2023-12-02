@@ -11,4 +11,5 @@ if __name__ == "__main__":
             if sys.argv[i] != '':
                 counter += int(sys.argv[i])
                 i+=1
+                
         print("{}".format(counter))
