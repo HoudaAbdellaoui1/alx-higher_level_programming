@@ -7,13 +7,13 @@ Welcome to the ALX High Level programming repository! This repository contains P
 1. Clone the repository:
 
    ```bash
-   git clone 
+   git clone https://github.com/HoudaAbdellaoui1/alx-higher_level_programming.git
    ```
 
 2. Navigate to the repository:
 
    ```bash
-   cd 
+   cd 0x00-python-hello_world
    ```
 
 ## Contributing
