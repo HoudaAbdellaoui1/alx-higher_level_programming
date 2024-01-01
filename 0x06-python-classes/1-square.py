@@ -1,16 +1,18 @@
 #!/usr/bin/python3
+"""Defines a square with size attribute """
+
+
 class Square:
     """
-    This class defines a square.
+    This class defines a square by encapsulating the size as a private instance attribute.
 
-    A square is a geometric shape with all four sides of equal length and
-    all interior angles right angles (90 degrees).
     """
+
     def __init__(self, size):
         """
         Initializes a new instance of the Square class.
 
-        This method has no parameters as the square is initially empty.
+        Parameters:
+        - size (int): The size of the square. No type or value verification is performed.
         """
-    pass
         self.__size = size
