@@ -30,6 +30,18 @@ class Square:
         """
         return self.__size ** 2
 
+    def my_print(self):
+        """
+        Prints the square with the character '#' to stdout.
+
+        If size is equal to 0, prints an empty line.
+        """
+        if self.__size == 0:
+            print()
+        else:
+            for _ in range(self.__size):
+                print("#" * self.__size)
+
     def __str__(self):
         """
         Returns a string representation of the Square object.
