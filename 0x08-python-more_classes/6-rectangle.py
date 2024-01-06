@@ -12,7 +12,7 @@ class Rectangle:
     number_of_instances = 0
 
 
-    def __init__(self, width=0, height=0, number_of_instances=0):
+    def __init__(self, width=0, height=0):
         """Initialize a new Rectangle.
 
         Args:
@@ -48,14 +48,6 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
-
-    @property
-    def number_of_instances(self):
-        """Get/set the number of object instances."""
-        return self.number_of_instances
-    
-    @number_of_instances.setter
-    def number_of_instances(self):
 
     def area(self):
         """Return the area of the Rectangle."""
