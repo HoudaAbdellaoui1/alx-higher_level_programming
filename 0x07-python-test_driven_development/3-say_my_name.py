@@ -1,0 +1,21 @@
+#!/usr/bin/python3
+"""Defines a function that prints first and last name."""
+
+
+def say_my_name(first_name, last_name=""):
+    """Print full name.
+
+    Args:
+        first_name (string): first name.
+        last_name (string): last name.
+    Raises:
+        TypeError: If first_name or last_name is not a string
+    Returns:
+        Concatenated first name and last name
+    """
+    if (not isinstance(first_name, str)):
+        raise TypeError("first_name must be a string")    
+    if (not isinstance(last_name, str)):
+        raise TypeError("last_name must be a string")
+    
+    return "My name is " + first_name + last_name
