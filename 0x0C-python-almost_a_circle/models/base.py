@@ -22,8 +22,8 @@ class Base:
         if id is not None:
             self.id = id
         else:
-            type(self).number_of_instances += 1
-            self.id = type(self).number_of_instances
+            type(self).__nb_objects += 1
+            self.id = type(self).__nb_objects
 
     @property
     def id(self):
@@ -33,7 +33,7 @@ class Base:
         Returns:
         - id: The identifier of the base instance.
         """
-        return self.__nb_objects
+        return self.__id
 
     @id.setter
     def id(self, value):
@@ -43,5 +43,4 @@ class Base:
         Parameters:
         - value (int): The new value of the id.
         """
-
-        self.id = value
+        self.__id = value
