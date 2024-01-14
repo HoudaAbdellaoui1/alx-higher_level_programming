@@ -4,6 +4,7 @@ from models.rectangle import Rectangle
 
 class TestRectangle(unittest.TestCase):
     """Unittests for testing instantiation of the rectangle class."""
+
     def test_constructor(self):
         # Test the constructor with valid values
         rectangle = Rectangle(5, 10, 2, 3, 1)
@@ -33,6 +34,26 @@ class TestRectangle(unittest.TestCase):
         # Test that y has a default value of 0
         rectangle = Rectangle(5, 10)
         self.assertEqual(rectangle.y, 0)
+
+    def test_width_zero_value(self):
+        # Test that setting width to 0 raises a ValueError
+        with self.assertRaises(ValueError):
+            rectangle = Rectangle(0, 10, 2, 3, 1)
+
+    def test_height_zero_value(self):
+        # Test that setting height to 0 raises a ValueError
+        with self.assertRaises(ValueError):
+            rectangle = Rectangle(5, 0, 2, 3, 1)
+
+    def test_x_negative_value(self):
+        # Test that setting a negative x raises a ValueError
+        with self.assertRaises(ValueError):
+            rectangle = Rectangle(5, 10, -2, 3, 1)
+
+    def test_y_negative_value(self):
+        # Test that setting a negative y raises a ValueError
+        with self.assertRaises(ValueError):
+            rectangle = Rectangle(5, 10, 2, -3, 1)
 
 if __name__ == '__main__':
     unittest.main()
