@@ -133,5 +133,25 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rectangle.x, 40)
         self.assertEqual(rectangle.y, 50)
 
+    def test_update_with_kwargs(self):
+        # Test the update method with **kwargs
+        rectangle = Rectangle(1, 2, 3, 4, 5)
+        rectangle.update(id=10, width=20, height=30, x=40, y=50)
+        self.assertEqual(rectangle.id, 10)
+        self.assertEqual(rectangle.width, 20)
+        self.assertEqual(rectangle.height, 30)
+        self.assertEqual(rectangle.x, 40)
+        self.assertEqual(rectangle.y, 50)
+
+    def test_update_with_args_and_kwargs(self):
+        # Test the update method with both *args and **kwargs
+        rectangle = Rectangle(1, 2, 3, 4, 5)
+        rectangle.update(10, width=20, height=30, x=40, y=50)
+        self.assertEqual(rectangle.id, 10)
+        self.assertEqual(rectangle.width, 20)
+        self.assertEqual(rectangle.height, 30)
+        self.assertEqual(rectangle.x, 40)
+        self.assertEqual(rectangle.y, 50)
+
 if __name__ == '__main__':
     unittest.main()

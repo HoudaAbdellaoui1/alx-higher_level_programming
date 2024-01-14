@@ -92,7 +92,7 @@ class Rectangle(Base):
         rect += " - " + str(self.__width) + "/" + str(self.__height)
         return (rect)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Assign arguments to attributes."""
         if args:
             if len(args) >= 1:
@@ -105,3 +105,6 @@ class Rectangle(Base):
                 self.x = args[3]
             if len(args) >= 5:
                 self.y = args[4]
+        elif kwargs:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
