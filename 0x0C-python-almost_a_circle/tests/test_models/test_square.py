@@ -32,6 +32,18 @@ class TestSquare(unittest.TestCase):
     def test_area(self):
         square = Square(5, 2, 3, 1)
         self.assertEqual(square.area(), 25)
+    
+    def test_size_property(self):
+        square = Square(5, 2, 3, 1)
+        self.assertEqual(square.size, 5)
+
+    def test_size_setter(self):
+        square = Square(5, 2, 3, 1)
+        square.size = 8
+        self.assertEqual(square.size, 8)
+        self.assertEqual(square.width, 8)
+        self.assertEqual(square.height, 8)
+
 
 if __name__ == '__main__':
     unittest.main()
