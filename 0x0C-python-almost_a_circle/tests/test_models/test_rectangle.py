@@ -122,6 +122,16 @@ class TestRectangle(unittest.TestCase):
         sys.stdout = sys.__stdout__
         expected_output = "[Rectangle] (1) 2/3 - 0/10\n"
         self.assertEqual(captured_output.getvalue(), expected_output)
-        
+    
+    def test_update(self):
+        # Test the update method
+        rectangle = Rectangle(1, 2, 3, 4, 5)
+        rectangle.update(10, 20, 30, 40, 50)
+        self.assertEqual(rectangle.id, 10)
+        self.assertEqual(rectangle.width, 20)
+        self.assertEqual(rectangle.height, 30)
+        self.assertEqual(rectangle.x, 40)
+        self.assertEqual(rectangle.y, 50)
+
 if __name__ == '__main__':
     unittest.main()
