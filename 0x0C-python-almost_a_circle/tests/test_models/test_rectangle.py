@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+from io import StringIO
+import sys
 import unittest
 from models.rectangle import Rectangle
 
@@ -67,5 +69,30 @@ class TestRectangle(unittest.TestCase):
         rectangle.width = 0
         rectangle.height = 10
         self.assertEqual(rectangle.area(), 0)
+
+    def test_display(self):
+        # Test the display method
+        rectangle = Rectangle(3, 2)
+        captured_output = StringIO()
+        sys.stdout = captured_output
+        rectangle.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(captured_output.getvalue(), "###\n###\n")
+
+        rectangle.width = 2
+        rectangle.height = 3
+        captured_output = StringIO()
+        sys.stdout = captured_output
+        rectangle.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(captured_output.getvalue(), "##\n##\n##\n")
+
+        rectangle.width = 0
+        rectangle.height = 10
+        captured_output = StringIO()
+        sys.stdout = captured_output
+        rectangle.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(captured_output.getvalue(), "")
 if __name__ == '__main__':
     unittest.main()
