@@ -83,3 +83,10 @@ class Rectangle(Base):
             if i != self.__height - 1:
                 rect.append("\n")
         print("".join(rect))
+
+    def __str__(self):
+        """Return the string representation of the Rectangle."""
+        rect = "[Rectangle] (" + str(self.id) + ") "
+        rect += str(self.__x) + "/" + str(self.__y)
+        rect += " - " + str(self.__width) + "/" + str(self.__height)
+        return (rect)

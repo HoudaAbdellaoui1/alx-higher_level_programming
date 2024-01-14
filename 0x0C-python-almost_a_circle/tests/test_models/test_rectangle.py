@@ -94,5 +94,34 @@ class TestRectangle(unittest.TestCase):
         rectangle.display()
         sys.stdout = sys.__stdout__
         self.assertEqual(captured_output.getvalue(), "")
+    
+    def test_str(self):
+        # Test the __str__ method
+        rectangle = Rectangle(5, 10, 2, 3, 1)
+        captured_output = StringIO()
+        sys.stdout = captured_output
+        print(rectangle)
+        sys.stdout = sys.__stdout__
+        expected_output = "[Rectangle] (1) 2/3 - 5/10\n"
+        self.assertEqual(captured_output.getvalue(), expected_output)
+
+        rectangle.width = 3
+        rectangle.height = 7
+        captured_output = StringIO()
+        sys.stdout = captured_output
+        print(rectangle)
+        sys.stdout = sys.__stdout__
+        expected_output = "[Rectangle] (1) 2/3 - 3/7\n"
+        self.assertEqual(captured_output.getvalue(), expected_output)
+
+        rectangle.width = 0
+        rectangle.height = 10
+        captured_output = StringIO()
+        sys.stdout = captured_output
+        print(rectangle)
+        sys.stdout = sys.__stdout__
+        expected_output = "[Rectangle] (1) 2/3 - 0/10\n"
+        self.assertEqual(captured_output.getvalue(), expected_output)
+        
 if __name__ == '__main__':
     unittest.main()
