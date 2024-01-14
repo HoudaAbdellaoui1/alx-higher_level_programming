@@ -69,20 +69,21 @@ class Rectangle(Base):
         """Return the area of the Rectangle."""
         return (self.__width * self.__height)
 
+
     def display(self):
         """Return the printable representation of the Rectangle.
 
         Represents the rectangle with the # character.
         """
         if self.__width == 0 or self.__height == 0:
-            return ("")
+            return
 
-        rect = []
-        for i in range(self.__height):
-            [rect.append('#') for j in range(self.__width)]
-            if i != self.__height - 1:
-                rect.append("\n")
-        print("".join(rect))
+        for _ in range(self.__y):
+            print()
+
+        for _ in range(self.__height):
+            print(" " * self.__x, end="")
+            print("#" * self.__width)
 
     def __str__(self):
         """Return the string representation of the Rectangle."""
