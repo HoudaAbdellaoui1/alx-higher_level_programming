@@ -55,5 +55,17 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             rectangle = Rectangle(5, 10, 2, -3, 1)
 
+    def test_area(self):
+        # Test the area method
+        rectangle = Rectangle(5, 10)
+        self.assertEqual(rectangle.area(), 50)
+
+        rectangle.width = 3
+        rectangle.height = 7
+        self.assertEqual(rectangle.area(), 21)
+
+        rectangle.width = 0
+        rectangle.height = 10
+        self.assertEqual(rectangle.area(), 0)
 if __name__ == '__main__':
     unittest.main()
