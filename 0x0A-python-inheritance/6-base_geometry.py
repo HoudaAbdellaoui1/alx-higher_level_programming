@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-""" Base Geometry module """
+""" Base Geometry module with area method """
 
 
 class BaseGeometry:
+    """A class with public attribute area"""
     def area(self):
-        """Public instance method that raises an Exception with the message
-        'area() is not implemented'."""
+        """raises an Exception with the message 'area() is not implemented'."""
         raise Exception("area() is not implemented")
