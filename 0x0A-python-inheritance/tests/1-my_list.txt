@@ -1,0 +1,35 @@
+import unittest
+
+class TestMyList(unittest.TestCase):
+
+    def test_print_sorted(self):
+        # Test Case 1
+        my_list_instance1 = MyList([5, 2, 8, 1, 3])
+        expected_result1 = [1, 2, 3, 5, 8]
+        self.assertPrintSorted(my_list_instance1, expected_result1)
+
+        # Test Case 2
+        my_list_instance2 = MyList([10, 7, 2, 5, 8])
+        expected_result2 = [2, 5, 7, 8, 10]
+        self.assertPrintSorted(my_list_instance2, expected_result2)
+
+        # Test Case 3
+        my_list_instance3 = MyList([1, 1, 1, 1, 1])
+        expected_result3 = [1, 1, 1, 1, 1]
+        self.assertPrintSorted(my_list_instance3, expected_result3)
+
+        # Test Case 4
+        my_list_instance4 = MyList([])
+        expected_result4 = []
+        self.assertPrintSorted(my_list_instance4, expected_result4)
+
+    def assertPrintSorted(self, my_list_instance, expected_result):
+        with self.subTest(my_list_instance=my_list_instance):
+            with unittest.mock.patch('sys.stdout', new_callable=io.StringIO) as mock_stdout:
+                my_list_instance.print_sorted()
+                output = mock_stdout.getvalue().strip().split('\n')
+                output = [int(x) for x in output[0].split()]
+                self.assertEqual(output, expected_result)
+
+if __name__ == '__main__':
+    unittest.main()
