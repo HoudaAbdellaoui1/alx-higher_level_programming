@@ -43,7 +43,7 @@ UNLOCK TABLES;
 --
 -- Table structure for table `tv_show_genres`
 --
-DROP TABLE IF EXISTS `tv_show_genres`;
+DROP TABLE IF EXISTS hbtn_0d_tvshows.tv_show_genres;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE hbtn_0d_tvshows.tv_show_genres (
@@ -62,7 +62,7 @@ CREATE TABLE hbtn_0d_tvshows.tv_show_genres (
 
 LOCK TABLES hbtn_0d_tvshows.tv_show_genres WRITE;
 /*!40000 ALTER TABLE `tv_show_genres` DISABLE KEYS */;
-INSERT INTO `tv_show_genres` VALUES (1,1),(1,2),(2,3),(2,1),(2,4),(3,5),(4,5),(5,5),(6,6),(6,1),(6,7),(6,8),(8,6),(8,1),(8,2),(8,7),(8,8),(10,5),(10,1);
+INSERT INTO hbtn_0d_tvshows.tv_show_genres VALUES (1,1),(1,2),(2,3),(2,1),(2,4),(3,5),(4,5),(5,5),(6,6),(6,1),(6,7),(6,8),(8,6),(8,1),(8,2),(8,7),(8,8),(10,5),(10,1);
 /*!40000 ALTER TABLE `tv_show_genres` ENABLE KEYS */;
 UNLOCK TABLES;
 
