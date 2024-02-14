@@ -1,6 +1,8 @@
 -- list all shows from hbtn_0d_tvshows_rate by their rating
-SELECT tv_shows.title, SUM(hbtn_0d_tvshows_rate.rating) AS rating
+SELECT tv_shows.title
 FROM tv_shows
-JOIN hbtn_0d_tvshows_rate ON tv_shows.id = hbtn_0d_tvshows_rate.show_id
+LEFT JOIN tv_show_genres ON tv_shows.id = tv_show_genres.show_id
+LEFT JOIN tv_genres ON tv_show_genres.genre_id = tv_genres.id
+WHERE tv_genres.name <> 'Comedy' OR tv_genres.name IS NULL
 GROUP BY tv_shows.title
-ORDER BY rating DESC;
+ORDER BY tv_shows.title ASC;
