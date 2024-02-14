@@ -35,7 +35,7 @@ CREATE TABLE hbtn_0d_tvshows.tv_genres (
 --
 
 LOCK TABLES hbtn_0d_tvshows.tv_genres WRITE;
-/*!40000 ALTER TABLE `tv_genres` DISABLE KEYS */;
+/*!40000 ALTER TABLE hbtn_0d_tvshows.tv_genres DISABLE KEYS */;
 INSERT INTO hbtn_0d_tvshows.tv_genres VALUES (1,'Drama'),(2,'Mystery'),(3,'Adventure'),(4,'Fantasy'),(5,'Comedy'),(6,'Crime'),(7,'Suspense'),(8,'Thriller');
 /*!40000 ALTER TABLE `tv_genres` ENABLE KEYS */;
 UNLOCK TABLES;
