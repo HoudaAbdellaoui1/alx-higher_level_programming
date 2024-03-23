@@ -14,7 +14,8 @@ if __name__ == "__main__":
                                 passwd=password, db=database, charset="utf8")
     cur = conn.cursor()
     query = "SELECT * FROM states WHERE name LIKE '{}' ORDER BY id ASC".format(name_searched)
-    cur.execute(query, (name_searched,))
+    query = query.format(name_searched)
+    cur.execute(query)
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
