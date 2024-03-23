@@ -10,9 +10,10 @@ if __name__ == "__main__":
     database = sys.argv[3]
     name_searched = sys.argv[4]
 
-    conn = MySQLdb.connect(host="localhost", port=3306, user=username, passwd=password, db=database, charset="utf8")
+    conn = MySQLdb.connect(host="localhost", port=3306, user=username,
+                                passwd=password, db=database, charset="utf8")
     cur = conn.cursor()
-    query = "SELECT * FROM states WHERE name =%s ORDER BY id ASC"
+    query = "SELECT * FROM states WHERE name LIKE '{}' ORDER BY id ASC".format(name_searched)
     cur.execute(query, (name_searched,))
     query_rows = cur.fetchall()
     for row in query_rows:
