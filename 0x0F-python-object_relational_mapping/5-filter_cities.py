@@ -20,7 +20,6 @@ if __name__ == "__main__":
     query = query.format(state_name)
     cur.execute(query)
     query_rows = cur.fetchall()
-    for row in query_rows:
-        print(row)
+    print(", ".join(map(lambda x: x[0], cur.fetchall())))
     cur.close()
     conn.close()
