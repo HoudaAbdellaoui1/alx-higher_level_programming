@@ -19,11 +19,6 @@ if __name__ == "__main__":
     session = DBSession()
 
     states = session.query(State).order_by(State.id).all()
-    cur.execute("SELECT * FROM states ORDER BY id ASC")
-    query_rows = cur.fetchall()
-    for row in query_rows:
-        if row[1].startswith("N"):
-            print(row)
     for state in states:
         print("{}: {}".format(state.id, state.name))
     
