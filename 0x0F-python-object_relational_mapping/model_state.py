@@ -12,5 +12,5 @@ class State(Base):
                 unique=True)
     name = Column(String(128), nullable=False)
 
-engine = create_engine('mysql://username:password@localhost:3306/database_name')
-Base.metadata.create_all(engine)
+# engine = create_engine('mysql://username:password@localhost:3306/database_name')
+# Base.metadata.create_all(engine)
