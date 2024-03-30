@@ -1,12 +1,9 @@
 #!/usr/bin/python3
 """Fetch and display header value"""
 
+import sys
+import urllib.request
 if __name__ == '__main__':
-    import urllib.request
-    with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as response:
-        the_page = response.read()
-    print("""Body response:
-            - type : {}
-            - content : {}
-            - utf8 content : {}"""
-          .format(type(the_page), the_page, the_page.decode('utf-8')))
+    with urllib.request.urlopen(sys.argv[1]) as response:
+        the_page = response
+    print(dict(the_page.headers).get('X-Request-Id'))
