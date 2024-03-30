@@ -8,7 +8,7 @@ if __name__ == '__main__':
     pwd = sys.argv[2]
     url = 'https://api.github.com/users'
     payload = {'USERNAME': username}
-    headers = {'Authorization' : ('Bearer {}'.format(pwd))}
+    headers = {'Authorization' : ('Bearer {}'.format(pwd)), 'accept' : 'application/vnd.github+json'}
     r = requests.get(url, params= payload, headers=headers)
     print(r.json())
     print(r.json()[0].get('id'))
