@@ -2,7 +2,7 @@
 """
 Fetches a URL and displays its response body.
 
-Usage: fetch_url.py <URL>
+Usage: ./3-error_code.py <URL>
 """
 import sys
 import urllib.request
