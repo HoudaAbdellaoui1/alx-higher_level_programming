@@ -10,4 +10,5 @@ if __name__ == '__main__':
     payload = {'USERNAME': username}
     headers = {'Authorization' : ('Bearer {}'.format(pwd))}
     r = requests.get(url, params= payload, headers=headers)
+    print(r.json())
     print(r.json()[0].get('id'))
