@@ -7,4 +7,4 @@ if __name__ == '__main__':
     print("""Body response:
             - type : {}
             - content : {}"""
-          .format(type(r), r.content))
+          .format(type(r.text), r.text))
