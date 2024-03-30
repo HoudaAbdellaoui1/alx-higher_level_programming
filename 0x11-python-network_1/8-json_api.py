@@ -4,7 +4,10 @@
 import requests
 import sys
 if __name__ == '__main__':
-    param = sys.argv[1] if len(sys.argv) > 1 else ""
+    if len(sys.argv[1] > 1):
+        param = sys.argv[1]
+    else:
+        param = ""
     r = requests.post(sys.argv[1], data={'q': param})
     try:
         response = r.json()
