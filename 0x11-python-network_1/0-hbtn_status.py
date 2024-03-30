@@ -1,8 +1,12 @@
 #!/usr/bin/python3
 """Fetch alx intranet resource"""
 
-import urllib.request
-req = urllib.request.Request('https://alx-intranet.hbtn.io/status')
-with urllib.request.urlopen(req) as response:
-   the_page = response.read()
-   print(the_page)
+if __name__ == '__main__':
+    import urllib.request
+    with urllib.request.urlopen('https://alx-intranet.hbtn.io/status') as response:
+        the_page = response.read()
+    print("""Body reponse:
+            - type : {}
+            - content : {}
+            - utf8 content : {}"""
+          .format(type(the_page), the_page, the_page.decode('utf-8')))
