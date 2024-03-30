@@ -7,8 +7,8 @@ import urllib.parse
 if __name__ == '__main__':
     req = urllib.request.Request(sys.argv[1])
     try:
-        urllib.request.urlopen(req)
+        resp = urllib.request.urlopen(req)
+        print(resp.decode('utf-8'))
     except urllib.error.HTTPError as e:
-        print(e.code)
-        print(e.read())
+        print('Error code: ', e.code)
     # print(the_page.decode('utf-8'))
