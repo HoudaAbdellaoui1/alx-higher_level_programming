@@ -8,8 +8,8 @@ request(url, (err, res, body) => {
     return;
   }
   let counter = 0;
+  console.log(body);
   for (let i = 0; i < body.results.length; i++) {
-    console.log(body);
     if (body.results[i].characters.includes('https://swapi-api.alx-tools.com/api/people/18/'))
         counter += 1;
   }
