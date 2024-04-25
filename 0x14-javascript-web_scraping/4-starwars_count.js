@@ -9,7 +9,8 @@ request(url, (err, res, body) => {
   }
   let counter = 0;
   for (let i = 0; i < body.results.length; i++) {
-    if (data.results[i].characters.includes('https://swapi-api.alx-tools.com/api/people/18/')) { counter += 1; }
+    if (body.results[i].characters.includes('https://swapi-api.alx-tools.com/api/people/18/'))
+        counter += 1;
   }
   console.log(counter);
 });
