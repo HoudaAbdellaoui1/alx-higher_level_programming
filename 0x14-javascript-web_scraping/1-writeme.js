@@ -6,5 +6,4 @@ const stringToWrite = process.argv[3];
 
 fs.appendFile(filePath, stringToWrite, function (err) {
   if (err) throw err;
-  console.log('Saved!');
 });
