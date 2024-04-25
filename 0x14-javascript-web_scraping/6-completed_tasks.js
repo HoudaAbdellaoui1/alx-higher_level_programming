@@ -25,7 +25,7 @@ request(apiUrl, (error, response, body) => {
 
   let output = '{';
   Object.keys(completedTasksByUser).forEach(userId => {
-    output += `'${userId}': ${completedTasksByUser[userId]}, `;
+    output += `'${userId}': ${completedTasksByUser[userId]},\n `;
   });
   output = output.slice(0, -2);
   output += '}';
