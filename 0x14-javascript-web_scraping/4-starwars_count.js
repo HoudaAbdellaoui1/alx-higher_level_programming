@@ -8,10 +8,13 @@ request(url, (err, res, body) => {
     return;
   }
   let counter = 0;
-  console.log(body);
-  for (let i = 0; i < body.results[0].length; i++) {
-    if (body.results[i].characters.includes('https://swapi-api.alx-tools.com/api/people/18/'))
-        counter += 1;
-  }
+  const films = JSON.parse(body).results;
+  films.forEach(film => {
+    if (film.characters.includes(
+      'https://swapi-api.alx-tools.com/api/people/18/')) {
+      counter++;
+    }
+  });
+
   console.log(counter);
 });
