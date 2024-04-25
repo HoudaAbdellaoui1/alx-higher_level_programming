@@ -24,10 +24,13 @@ request(apiUrl, (error, response, body) => {
   }, {});
 
   let output = '{ ';
-  Object.keys(completedTasksByUser).forEach(userId => {
-    output += `'${userId}': ${completedTasksByUser[userId]},\n `;
+  const keys = Object.keys(completedTasksByUser);
+  keys.forEach((userId, index) => {
+    output += `'${userId}': ${completedTasksByUser[userId]}`;
+    if (index !== keys.length - 1) {
+      output += ',\n ';
+    }
   });
-  output = output.slice(0, -2);
   output += ' }';
   console.log(output);
 });
