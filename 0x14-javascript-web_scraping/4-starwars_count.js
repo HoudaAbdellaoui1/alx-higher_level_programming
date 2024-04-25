@@ -7,8 +7,9 @@ request(url, (err, res, body) => {
     console.error(err);
     return;
   }
-
-  console.log(body);
-//   const movie = JSON.parse(body);
-//   console.log(movie.title);
+  let counter = 0;
+  for (let i = 0; i < body.results.length; i++) {
+    if (data.results[i].characters.includes('https://swapi-api.alx-tools.com/api/people/18/')) { counter += 1; }
+  }
+  console.log(counter);
 });
