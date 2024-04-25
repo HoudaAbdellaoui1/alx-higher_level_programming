@@ -23,7 +23,11 @@ request(apiUrl, (error, response, body) => {
     return acc;
   }, {});
 
+  let output = "{";
   Object.keys(completedTasksByUser).forEach(userId => {
-    console.log(`'${userId}': ${completedTasksByUser[userId]} tasks.`);
+    console.log(`'${userId}': ${completedTasksByUser[userId]} `);
   });
+  output = output.slice(0, -2);
+  output += "}";
+  console.log(output);
 });
